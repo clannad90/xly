@@ -1,0 +1,35 @@
+$(function(){
+	$("#nav_curriculum").on("mouseover",function(){
+		$("#nav_curriculum_list").css("display","block")
+	}).mouseleave(function(){
+		$("#nav_curriculum_list").css("display","none")
+	}).on("click","li",function(){
+		var index=$(this).attr("data-title");
+		if(index=="lw"){
+			location.href="pagelw.html";
+		}
+		console.log(index);
+		if(index=="ky"){
+			location.href="pageky.html";
+		}
+		if(index=="sk"){
+			location.href="pagesk.html"
+		}
+		if(index=="yrf"){
+			location.href="pageyrf.html"
+		}
+	})
+	//返回首页
+	$("#call_back").click(function(){
+		location.href="index.html";
+	})
+	$(".nav_contact").on("mouseover",function(){
+		$("#nav_contact_list").css("display","block")
+	}).mouseleave(function(){
+		$("#nav_contact_list").css("display","none")
+	})
+	$(".banner_nav").find("li").mouseover(function(){
+		var	index=$(this).index();
+		$(".img_current").find("ul>li").eq(index).addClass("current_style").siblings().removeClass("current_style");
+	})//banner的hover效果
+})
